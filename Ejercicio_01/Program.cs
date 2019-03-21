@@ -41,7 +41,6 @@ namespace Ejercicio_01
                 {
                     Console.Write(numero + " es un numero perfecto\n");
                     contador++;
-                   Console.Write(contador+"\n");
                 }
                 acumulador = 0;
             }
@@ -61,6 +60,34 @@ namespace Ejercicio_01
 
             resultado = Math.Pow(numero, 3);
             Console.Write("{0}", "El cubo de " + numero + " es: " + resultado + "\n");
+        }
+
+        static void centroNumerico(int limite)
+        {
+            int sumaPrimera = 0;
+            int sumaSegunda = 0;
+            int numero;
+
+            for(numero = 2; numero < limite; numero++)
+            {
+                sumaPrimera = 0;
+                sumaSegunda = 0;
+
+                for (int i = 0;i < numero; i++)
+                {
+                    sumaPrimera += i;
+                }
+              //  Console.Write(sumaPrimera + " Suma Primera\n");
+                for (int i = numero + 1; sumaSegunda < sumaPrimera; i++)
+                {
+                    sumaSegunda += i;
+                }
+              //  Console.Write(sumaSegunda + " Suma Segunda\n");
+                if(sumaSegunda == sumaPrimera)
+                {
+                    Console.Write(numero + "\n");
+                }
+            }
         }
 
 
@@ -104,8 +131,9 @@ namespace Ejercicio_01
             Program.cuadrado(numero);
             Program.cubo(numero);
             Console.ReadKey();
-            Program.primos(20);*/
-            Program.numeroPerfecto();
+            Program.primos(20);
+            Program.numeroPerfecto();*/
+            Program.centroNumerico(50);
             Console.ReadKey();
 
 
