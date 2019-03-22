@@ -12,7 +12,7 @@ namespace Ejercicio_01
         {
             for (int i = 0; i < numero; i++)
             {
-                if (i > 3 && (i % 2 == 0 || i % 3 == 0)) 
+                if (i > 3 && (i % 2 == 0 || i % 3 == 0))
                 {
                     continue;
                 }
@@ -30,13 +30,13 @@ namespace Ejercicio_01
             {
                 for (int j = 1; j < numero; j++)
                 {
-                    if(numero % j == 0)
+                    if (numero % j == 0)
                     {
                         acumulador += j;
-                      //  Console.Write("Numero: "+numero+" Cociente: "+j+"\n");
+                        //  Console.Write("Numero: "+numero+" Cociente: "+j+"\n");
                     }
                 }
-                
+
                 if (acumulador == numero)
                 {
                     Console.Write(numero + " es un numero perfecto\n");
@@ -68,22 +68,22 @@ namespace Ejercicio_01
             int sumaSegunda = 0;
             int numero;
 
-            for(numero = 2; numero < limite; numero++)
+            for (numero = 2; numero < limite; numero++)
             {
                 sumaPrimera = 0;
                 sumaSegunda = 0;
 
-                for (int i = 0;i < numero; i++)
+                for (int i = 0; i < numero; i++)
                 {
                     sumaPrimera += i;
                 }
-              //  Console.Write(sumaPrimera + " Suma Primera\n");
+                //  Console.Write(sumaPrimera + " Suma Primera\n");
                 for (int i = numero + 1; sumaSegunda < sumaPrimera; i++)
                 {
                     sumaSegunda += i;
                 }
-              //  Console.Write(sumaSegunda + " Suma Segunda\n");
-                if(sumaSegunda == sumaPrimera)
+                //  Console.Write(sumaSegunda + " Suma Segunda\n");
+                if (sumaSegunda == sumaPrimera)
                 {
                     Console.Write(numero + "\n");
                 }
@@ -100,6 +100,41 @@ namespace Ejercicio_01
                 }
             }
         }
+        static double sumaBisiesto(int desde, int hasta)
+        {
+            int acumulador = 0;
+
+            for (int anno = desde; anno <= hasta; anno++)
+            {
+                if ((anno % 4 == 0 && anno % 100 != 0) || (anno % 100 == 0 && anno % 400 == 0))
+                {
+                    acumulador++;
+                }
+            }
+
+            return (double)acumulador;
+        }
+
+        static void calculoAnnos()
+        {
+            DateTime fechaNacimiento;
+            DateTime fechaActual;
+            TimeSpan diferencia;
+            double diasBisiestos;
+
+            Console.Write("Ingrese fecha de nacimiento: \n");
+
+            fechaNacimiento = DateTime.Parse(Console.ReadLine());//Se parsea fecha ingresadad a dato de objeto DateTime
+            fechaActual = DateTime.Today;//Se obtiene la fecha actual con un objeto DateTime
+
+            diasBisiestos = sumaBisiesto(fechaNacimiento.Year, fechaActual.Year);
+            Console.Write("Anio de nacimiento: " + fechaNacimiento.Year + " Anio de actual: " + fechaActual.Year);
+
+            diferencia = fechaActual - fechaNacimiento;//Al operar con ambos objetos DateTime se convierte en objeto TimeSpan
+            diferencia += (TimeSpan.FromDays(diasBisiestos));
+            Console.Write("Dias vividos " + diferencia);
+        }
+
 
         static void Main(string[] args)
         {
@@ -145,7 +180,10 @@ namespace Ejercicio_01
              Program.numeroPerfecto();
              Program.centroNumerico(10);*/
             Program.annoBisiesto(1800, 2020);
+            Program.calculoAnnos();
             Console.ReadKey();
+
+           
 
 
             //federicordavila@gmail.com
