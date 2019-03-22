@@ -90,50 +90,61 @@ namespace Ejercicio_01
             }
         }
 
+        static void annoBisiesto(int desde, int hasta)
+        {
+            for (int anno = desde; anno <= hasta; anno++)
+            {
+                if ((anno % 4 == 0 && anno % 100 != 0) || (anno % 100 == 0 && anno % 400 == 0))
+                {
+                    Console.Write(anno + " es bisiesto\n");
+                }
+            }
+        }
 
         static void Main(string[] args)
         {
-           /* int numero = 0;
-            int numeroMaximo = int.MaxValue;
-            int numeroMinimo = int.MinValue;
-            int total = 0;
-            int promedio;
-           
-            int i;
+            /* int numero = 0;
+             int numeroMaximo = int.MaxValue;
+             int numeroMinimo = int.MinValue;
+             int total = 0;
+             int promedio;
 
-            Console.Title = "Ejercicio_01";
-            Console.Write("Ingrese 5 numeros por consola\n");
+             int i;
 
-            for (i = 0; i < 5; i++)
-            {
-                numero = int.Parse(Console.ReadLine());
-                if (i == 0)
-                {
-                    numeroMinimo = numero;
-                    numeroMaximo = numero;
-                }
-                else if (numero < numeroMinimo)
-                {
-                    numeroMinimo = numero;
-                }
-                else if (numero > numeroMaximo)
-                {
-                    numeroMaximo = numero;
-                }
-                total += numero;
-            }
-            promedio = total / i;
+             Console.Title = "Ejercicio_01";
+             Console.Write("Ingrese 5 numeros por consola\n");
 
-            Console.Write("{0}{1}{2}", "El menor valor es:" + numeroMinimo + "\n",
-                            "El maximo valor es:" + numeroMaximo + "\n", "El promedio es:" + promedio + "\n");
-            Console.ReadKey();
+             for (i = 0; i < 5; i++)
+             {
+                 numero = int.Parse(Console.ReadLine());
+                 if (i == 0)
+                 {
+                     numeroMinimo = numero;
+                     numeroMaximo = numero;
+                 }
+                 else if (numero < numeroMinimo)
+                 {
+                     numeroMinimo = numero;
+                 }
+                 else if (numero > numeroMaximo)
+                 {
+                     numeroMaximo = numero;
+                 }
+                 total += numero;
+             }
+             promedio = total / i;
 
-            Program.cuadrado(numero);
-            Program.cubo(numero);
-            Console.ReadKey();
-            Program.primos(20);
-            Program.numeroPerfecto();*/
-            Program.centroNumerico(50);
+             Console.Write("{0}{1}{2}", "El menor valor es:" + numeroMinimo + "\n",
+                             "El maximo valor es:" + numeroMaximo + "\n", "El promedio es:" + promedio + "\n");
+             Console.ReadKey();
+
+             Program.cuadrado(numero);
+             Program.cubo(numero);
+             Console.ReadKey();
+             Program.primos(20);
+             Program.numeroPerfecto();
+             Program.centroNumerico(10);*/
+            Program.annoBisiesto(1800, 2020);
             Console.ReadKey();
 
 
