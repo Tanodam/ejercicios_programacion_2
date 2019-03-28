@@ -63,7 +63,10 @@ namespace Ejercicio_11
             } while (contador < 10);
 
             promedio = total / contador;
-            Console.Write("{0}{1}{2}",minimo+" ", maximo + " ", promedio);
+            Console.Write("{0}{1}{2}",
+                            "El numero minimo es: "+minimo+" ",
+                            "El numero maximo es: " + maximo + " ",
+                            "El promedio es: " + promedio);
             Console.ReadKey();
         }
     }
