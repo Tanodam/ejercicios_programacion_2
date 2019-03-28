@@ -35,7 +35,7 @@ namespace Ejercicio_08
 
             do
             {
-                Console.Write("Enter employee data: \n");
+                Console.Write("Enter employee\' name: \n");
                 auxName = Console.ReadLine();
                 auxHours = Console.ReadLine();
                 auxYears = Console.ReadLine();

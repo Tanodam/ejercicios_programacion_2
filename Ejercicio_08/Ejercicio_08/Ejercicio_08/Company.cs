@@ -5,7 +5,12 @@ namespace Ejercicio_08
 {
     public class Company
     {
-        LinkedList<Employees> employees;
+        public LinkedList<Employees> employees;
+
+        public Company()
+        {
+            employees = new LinkedList<Employees>();
+        }
 
         public Boolean add(Employees newEmployee)//TESTEAR
         {
