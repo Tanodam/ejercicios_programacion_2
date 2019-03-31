@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_17
+namespace ClaseBoligrafo
 {
     class Boligrafo
     {
@@ -14,7 +14,8 @@ namespace Ejercicio_17
 
         public Boligrafo(short tinta, ConsoleColor color)
         {
-
+            this.SetTinta(tinta);
+            this.SetColor(color);
         }
 
         public ConsoleColor GetColor()
@@ -28,15 +29,20 @@ namespace Ejercicio_17
 
         public bool Pintar(int gasto,out string dibujo)
         {
-            if(gasto < this.tinta)
-            {
-                 this.SetTinta((short)-gasto);
+            bool returnValue = false;
+            dibujo = "";
 
-            
-                String.dibujo = 
+            if (this.tinta > 0)
+            {
+                for (int i = 0; this.tinta > 0 && i < gasto;i++)
+                {
+                    dibujo += "*";
+                }
+                gasto = this.tinta - gasto;
+                this.SetTinta((short)gasto);
+                returnValue = true;
             }
-            dibujo = "dibujo";
-            return true;
+            return returnValue;
         }
         public void Recargar()
         {
@@ -49,13 +55,11 @@ namespace Ejercicio_17
                 this.tinta = tinta;
             }   
         }
-
-
-        static void Main(string[] args)
+        private void SetColor(ConsoleColor color)
         {
-            Boligrafo boligrafoAzul = new Boligrafo(100, ConsoleColor.Blue);
-            Boligrafo boligrafoRojo = new Boligrafo(50, ConsoleColor.Red);
-
+            this.color = color;
         }
+
+       
     }
 }
