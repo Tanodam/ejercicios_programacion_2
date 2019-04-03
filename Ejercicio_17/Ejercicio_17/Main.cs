@@ -22,7 +22,7 @@ namespace Program
             Console.Write("\nEl color de tinta del boligrafo azul es: " + boligrafoRojo.GetColor());
             Console.Write("\nEl color de tinta del boligrafo rojo es: " + boligrafoRojo.GetColor());
 
-            boligrafoAzul.Pintar(8, out dibujoAzul);
+            boligrafoAzul.Pintar(10, out dibujoAzul);
             boligrafoRojo.Pintar(5, out dibujoRojo);
             Console.ForegroundColor = boligrafoAzul.GetColor();
             Console.Write("\nEl consumo de tinta al dibujar fue >> " + dibujoAzul);
