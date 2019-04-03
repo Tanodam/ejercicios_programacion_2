@@ -23,7 +23,7 @@ namespace EjercicioProducto
         {
             return this.productos;
         }
-        public string MostrarEstante(Estante estante)
+        public static string MostrarEstante(Estante estante)
         {
             string datosEstante = "";
 
@@ -69,8 +69,20 @@ namespace EjercicioProducto
         }
         public static Estante operator -(Estante estante, Producto producto)
         {
+            int i;
 
+            if (estante == producto)
+            {
+                for (i = 0; i < estante.productos.Length; i++)
+                {
+                    if (Object.ReferenceEquals(estante.productos[i], producto))
+                    {
+                        estante.productos[i] = null;
+                        break;
+                    }
+                }
+            }
+            return estante;
         }
-
     }
 }
