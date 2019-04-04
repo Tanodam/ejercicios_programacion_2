@@ -76,5 +76,31 @@ namespace EjercicioProducto
                 return false;
             }
         }
+        //
+        //OVERRIDE EQUALS
+        //
+        public override bool Equals(object obj)
+        {
+            if (obj == null || this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Producto producto = (Producto)obj;
+
+            if (codigoDeBarra == producto.codigoDeBarra)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return Tuple.Create(codigoDeBarra, marca,precio).GetHashCode();
+        }
     }
 }

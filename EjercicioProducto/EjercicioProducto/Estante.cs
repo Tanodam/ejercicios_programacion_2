@@ -87,5 +87,24 @@ namespace EjercicioProducto
             }
             return estante;
         }
+        //
+        //OVERRIDE EQUALS
+        //
+        public override bool Equals(object obj)
+        {
+            if (obj != null || this.GetType() != obj.GetType())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return Tuple.Create(productos, ubicacionEstante).GetHashCode();
+        }
     }
 }
