@@ -31,10 +31,12 @@ namespace EjercicioProducto
         {
             string datosProducto = "";
 
-            datosProducto += "\nMarca: " + producto.GetMarca();
-            datosProducto += "\nPrecio: " + producto.GetPrecio().ToString();
-            datosProducto += "\nCodigo de barras: " + (string)producto;
-
+            if(!Object.ReferenceEquals(producto,null))
+            {
+                datosProducto += "\nMarca: " + producto.GetMarca();
+                datosProducto += "\nPrecio: " + producto.GetPrecio().ToString();
+                datosProducto += "\nCodigo de barras: " + (string)producto;
+            }
             return datosProducto;
         }
 
@@ -74,6 +76,5 @@ namespace EjercicioProducto
                 return false;
             }
         }
-
     }
 }

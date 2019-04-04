@@ -27,9 +27,12 @@ namespace EjercicioProducto
         {
             string datosEstante = "";
 
-            foreach (Producto auxiliar in estante.productos)
+            if(!Object.ReferenceEquals(estante, null))
             {
-                datosEstante += Producto.MostrarProducto(auxiliar);
+                foreach (Producto auxiliar in estante.productos)
+                {
+                    datosEstante += Producto.MostrarProducto(auxiliar);
+                }
             }
             return datosEstante; 
         }
@@ -59,8 +62,8 @@ namespace EjercicioProducto
                 {
                     if(Object.ReferenceEquals(estante.productos[i], null))
                     {
-                        valorRetorno = true;
                         estante.productos[i] = producto;
+                        valorRetorno = true;
                         break;
                     }
                 }
