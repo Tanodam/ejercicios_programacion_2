@@ -9,11 +9,11 @@ namespace Billetes
     class Dolar
     {
         double cantidad;
-        float cotizRespectoDolar;
+        static float cotizRespectoDolar;
 
         public Dolar()
         {
-
+            cotizRespectoDolar = 1;
         }
 
         public Dolar(double cantidad)
@@ -23,7 +23,7 @@ namespace Billetes
 
         public Dolar(double cantidad, float cotizacion) : this(cantidad)
         {
-            this.cotizRespectoDolar = cotizacion;
+            cotizRespectoDolar = cotizacion;
         }
 
         public double GetCantidad()
@@ -31,9 +31,9 @@ namespace Billetes
             return this.cantidad;
         }
 
-        public float GetCotizacion()
+        public static float GetCotizacion()
         {
-            return this.cotizRespectoDolar;
+            return cotizRespectoDolar;
         }
 
         //Operadores
@@ -69,38 +69,59 @@ namespace Billetes
 
         public static bool operator ==(Dolar dolares, Euro euros)
         {
-
+            if (dolares.GetCantidad() == (euros.GetCantidad() / cotizRespectoDolar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool operator ==(Dolar dolares, Pesos pesos)
         {
-
+            if (dolares.GetCantidad() == (pesos.GetCantidad() / cotizRespectoDolar))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static bool operator ==(Dolar dolaresUno, Dolar dolaresDos)
         {
-
+            if (dolaresUno.GetCantidad() == dolaresDos.GetCantidad())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public static Dolar operator -(Dolar dolar, Euro euros)
         {
-
+            return dolar.GetCantidad() - euros.GetCantidad() / cotizRespectoDolar;
         }
 
         public static Dolar operator -(Dolar dolar, Pesos pesos)
         {
-
+            return dolar.GetCantidad() - pesos.GetCantidad() / cotizRespectoDolar;
         }
 
         public static Dolar operator +(Dolar dolar, Euro euros)
         {
-
+            return dolar.GetCantidad() + euros.GetCantidad() / cotizRespectoDolar;
         }
 
         public static Dolar operator +(Dolar dolar, Pesos pesos)
         {
-
+            return dolar.GetCantidad() + pesos.GetCantidad() / cotizRespectoDolar;
         }
     }
 }
-}
+
