@@ -39,12 +39,12 @@ namespace Billetes
         //Operadores
         public static explicit operator Dolar(Euro euros)
         {
-            return (euros.GetCantidad() / cotizRespectoDolar);
+            return new Dolar(euros.GetCantidad() / cotizRespectoDolar);
         }
 
         public static explicit operator Pesos(Euro euros)
         {
-            return ((Dolar)euros).GetCantidad() / Pesos.GetCotizacion();
+            return new Pesos(euros.GetCantidad() * Euro.cotizRespectoDolar / Pesos.GetCotizacion());
         }
 
         public static implicit operator Euro(double cantidad)

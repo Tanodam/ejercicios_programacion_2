@@ -39,32 +39,32 @@ namespace Billetes
         //Operadores
         public static explicit operator Euro(Dolar dolares)
         {
-
+            return (Euro)(dolares.GetCantidad() / Euro.GetCotizacion());
         }
 
         public static explicit operator Pesos(Dolar dolares)
         {
-
+            return (Pesos)(dolares.GetCantidad() / Pesos.GetCotizacion());
         }
 
-        public static implicit operator Dolar(double dolar)
+        public static implicit operator Dolar(double cantidad)
         {
-
+            return new Dolar(cantidad);
         }
 
         public static bool operator !=(Dolar dolares, Euro euros)
         {
-
+            return !(dolares == euros);
         }
 
         public static bool operator !=(Dolar dolares, Pesos pesos)
         {
-
+            return !(dolares == pesos);
         }
 
         public static bool operator !=(Dolar dolaresUno, Dolar dolaresDos)
         {
-
+            return !(dolaresUno == dolaresDos);
         }
 
         public static bool operator ==(Dolar dolares, Euro euros)
