@@ -14,9 +14,8 @@ namespace Ejercicio_20
             Pesos misPesos = new Pesos(2000);
             Euro misEuros = new Euro(100);
             Dolar misDolares = new Dolar(300);
-            Dolar totalDolares = misPesos + misDolares;
-
-            Console.Write("Tengo {0} Pesos equivalentes a {1} dolares", misPesos.GetCantidad(), (Dolar)(misPesos.GetCantidad()));
+            
+            Console.Write("Tengo {0} Pesos\nTengo {1} Pesos\nTengo {2} Pesos", misPesos.GetCantidad(), misEuros, misPesos);
             Console.ReadKey();
 
         }
