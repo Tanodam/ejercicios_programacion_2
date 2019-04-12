@@ -105,12 +105,12 @@ namespace Billetes
 
         public static Pesos operator -(Pesos pesos, Dolar dolar)
         {
-            return pesos.GetCantidad() - dolar.GetCantidad() / cotizRespectoDolar;
+            return new Pesos(pesos.GetCantidad() - ((Pesos)dolar).GetCantidad());
         }
 
         public static Pesos operator -(Pesos pesos, Euro euros)
         {
-            return pesos.GetCantidad() - euros.GetCantidad() / cotizRespectoDolar;
+            return new Pesos(pesos.GetCantidad() - ((Pesos)euros).GetCantidad());
         }
 
         public static Pesos operator +(Pesos pesos, Dolar dolar)

@@ -105,22 +105,22 @@ namespace Billetes
 
         public static Euro operator -(Euro euros, Dolar dolar)
         {
-            return euros.GetCantidad() - dolar.GetCantidad() / cotizRespectoDolar;
+            return new Euro(euros.GetCantidad() - ((Euro)dolar).GetCantidad());
         }
 
         public static Euro operator -(Euro euros, Pesos pesos)
         {
-            return euros.GetCantidad() - pesos.GetCantidad() / cotizRespectoDolar;
+            return new Euro(euros.GetCantidad() - ((Euro)pesos).GetCantidad());
         }
 
         public static Euro operator +(Euro euros, Dolar dolar)
         {
-            return euros.GetCantidad() + dolar.GetCantidad() / cotizRespectoDolar;
+            return new Euro(euros.GetCantidad() + ((Euro)dolar).GetCantidad());
         }
 
         public static Euro operator +(Euro euros, Pesos pesos)
         {
-            return euros.GetCantidad() + pesos.GetCantidad() / cotizRespectoDolar;
+            return new Euro(euros.GetCantidad() + ((Euro)pesos).GetCantidad());
         }
     }
 }
