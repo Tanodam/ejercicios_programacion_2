@@ -49,6 +49,11 @@ namespace Ejercicio_28
             return values;
         }
 
+        public static void Clear()
+        {
+            diccionario.Clear();
+        }
+
         static int Compare(KeyValuePair<string, int> primerElemento, KeyValuePair<string, int> segundoElemento)
         {
             int returnValue = 0;
@@ -67,5 +72,7 @@ namespace Ejercicio_28
             }
             return returnValue;
         }
+
+       
     }
 }

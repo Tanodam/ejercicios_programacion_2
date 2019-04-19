@@ -22,6 +22,7 @@ namespace Ejercicio_28
             string[] texto;
 
             texto = lblTexto.Text.Split(' ');
+            Diccionario.Clear();
 
             foreach(string palabra in texto)
             {
