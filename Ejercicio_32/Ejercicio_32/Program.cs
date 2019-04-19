@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_29
+namespace Ejercicio_32
 {
     class Program
     {
@@ -19,27 +19,27 @@ namespace Ejercicio_29
 
             if(equipo + jugadorUno)
             {
-                Console.Write("\nSe ha agregado jugador: {0}", jugadorUno.MostrarDatos());
+                Console.Write("\n\nSE AGREGÓ JUGADOR. {0}", jugadorUno.MostrarDatos());
             }
 
             if (equipo + jugadorDos)
             {
-                Console.Write("\nSe ha agregado jugador: {0}", jugadorDos.MostrarDatos());
+                Console.Write("\n\nSE AGREGÓ JUGADOR. {0}", jugadorDos.MostrarDatos());
             }
             
             if (equipo + jugadorTres)
             {
-                Console.Write("\nSe ha agregado jugador: {0}", jugadorTres.MostrarDatos());
+                Console.Write("\n\nSE AGREGÓ JUGADOR. {0}", jugadorTres.MostrarDatos());
             }
 
             if (equipo + jugadorCuatro)
             {
-                Console.Write("\nSe ha agregado jugador: {0}", jugadorCuatro.MostrarDatos());
+                Console.Write("\n\nSE AGREGÓ JUGADOR. {0}", jugadorCuatro.MostrarDatos());
             }
 
             if (equipo + jugadorCinco)
             {
-                Console.Write("\nSe ha agregado jugador: {0}", jugadorCinco.MostrarDatos());
+                Console.Write("\n\nSE AGREGÓ JUGADOR. {0}", jugadorCinco.MostrarDatos());
             }
             Console.ReadKey();
         }
