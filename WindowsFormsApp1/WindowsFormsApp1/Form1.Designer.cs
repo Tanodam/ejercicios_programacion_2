@@ -58,13 +58,14 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(164, 29);
+            this.txtNombre.Location = new System.Drawing.Point(164, 30);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(105, 20);
             this.txtNombre.TabIndex = 2;
             this.txtNombre.Text = "Ingrese su nombre";
             this.txtNombre.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtNombre.Click += new System.EventHandler(this.txtNombre_Click);
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // Form1
             // 
@@ -76,6 +77,8 @@
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.btnMensaje);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Ventana";
             this.Load += new System.EventHandler(this.Form1_Load);
