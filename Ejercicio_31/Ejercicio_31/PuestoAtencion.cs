@@ -38,14 +38,15 @@ namespace Ejercicio_31
 
         public PuestoAtencion(Puesto puesto)
         {
-
+            this.puesto = puesto;
         }
 
         public bool Atender(Cliente cliente)
         {
-            if(cliente != null)
+            //COMO VALIDAR QUE EL CLIENTE SEA VALIDO
+            if(cliente.Numero > 0)
             {
-                Console.Write("Atendiendo al cliente...");
+                Console.Write("\nAtendiendo al cliente {0}...",cliente.Nombre);
                 Thread.Sleep(3000);
                 return true;
             }
@@ -54,6 +55,5 @@ namespace Ejercicio_31
                 return false;
             }
         }
-        
     }
 }

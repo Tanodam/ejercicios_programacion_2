@@ -43,7 +43,8 @@ namespace Ejercicio_31
 
         public Cliente(int numero)
         {
-           this.Numero = numero;
+            
+            this.Numero = numero;
         }
 
         public Cliente(int numero, string nombre) : this(numero)
@@ -70,8 +71,6 @@ namespace Ejercicio_31
             {
                 return false;
             }
-
-
         }
 
         //

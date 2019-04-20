@@ -18,7 +18,14 @@ namespace Ejercicio_31
         {
             get
             {
-                return clientes.Dequeue();
+                if(clientes.Count > 0)
+                {
+                    return clientes.Dequeue();
+                }
+                else
+                {
+                    return new Cliente(0); //Se utiliza el numero 0 para validar cliente inexistente
+                }
             }
             set
             {
