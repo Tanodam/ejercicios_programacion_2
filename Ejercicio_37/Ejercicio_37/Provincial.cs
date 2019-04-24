@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_37
 {
-	public enum Franja
-	{
-		Franja_1,
-		Franja_2,
-		Franja_3,
-	}
 
 	public class Provincial : Llamada
 	{
-		private Franja franjaHoraria;
+	    public enum Franja
+	    {
+		    Franja_1,
+		    Franja_2,
+		    Franja_3
+	    };
+		protected Franja franjaHoraria;
 
 		#region Propiedades
 
@@ -37,33 +37,31 @@ namespace Ejercicio_37
 
 			switch(this.franjaHoraria)
 			{
-				case Franja_1 :
-						costoTotal = this.Duracion * 0.99;
+				case Franja.Franja_1:
+						costoTotal = (float)(this.Duracion * 0.99);
 						break;
-				case Franja_2 :
-						costoTotal = this.Duracion * 1.25;
+				case Franja.Franja_2 :
+						costoTotal = (float)(this.Duracion * 1.25);
 						break;
-				case Franja_3 :
-						costoTotal = this.Duracion * 0.66;
+				case Franja.Franja_3 :
+						costoTotal = (float)(this.Duracion * 0.66);
 						break;	
 			}
 			return costoTotal;
 		}
 
-		public Provincial(Franja miFranja, Llamada llamada)
-		{
-			this.franjaHoraria = miFranja;
-			this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino);
-		}
+		public Provincial(Franja miFranja, Llamada llamada) : this(llamada.NroOrigen, miFranja, llamada.Duracion, llamada.NroDestino)
+		{}
 
-		public Provincial(string origen, float duracion, string destino)
+		public Provincial(string origen, Franja MiFranja, float duracion, string destino)
 		{
+            this.franjaHoraria = MiFranja;
 			this.duracion = duracion;
 			this.nroDestino = destino;
 			this.nroOrigen = origen;
 		}
 
-		public string Mostrar()
+		public new string Mostrar()
 		{
 			StringBuilder datos = new StringBuilder("");
 

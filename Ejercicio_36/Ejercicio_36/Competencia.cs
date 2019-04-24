@@ -75,9 +75,13 @@ namespace Ejercicio_36
         {
             get
             {
-                if(i < this.competidores.Count())
+                if(i < this.competidores.Count)
                 {
                     return competidores[i]; 
+                }
+                else
+                {
+                    return null;
                 }
             }
         }

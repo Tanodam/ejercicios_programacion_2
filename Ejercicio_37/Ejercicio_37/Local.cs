@@ -8,7 +8,7 @@ namespace Ejercicio_37
 {
 	public class Local : Llamada
 	{
-		private float costoLlamada;
+        protected float costoLlamada;
 
 		#region Propiedades
 
@@ -29,9 +29,9 @@ namespace Ejercicio_37
 			return this.costoLlamada * this.Duracion;
 		}
 
-		public Local(Llamada llamada, float costo) 
+		public Local(Llamada llamada, float costo) : this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo)
 		{
-			this(llamada.NroOrigen, llamada.Duracion, llamada.NroDestino, costo);
+			
 		}
 
 		public Local(string origen, float duracion, string destino, float costo)
@@ -42,7 +42,7 @@ namespace Ejercicio_37
 			this.costoLlamada = costo;
 		}
 
-		public string Mostrar()
+		public new string Mostrar()
 		{
 			StringBuilder datos = new StringBuilder("");
 

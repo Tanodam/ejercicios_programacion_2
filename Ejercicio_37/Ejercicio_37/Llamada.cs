@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ejercicio_37
 {
-	public enum TipoLlamada
-	{
-		Local,
-		Provincial,
-		Todas,
-	}
 
 	public class Llamada
 	{
+	    public enum TipoLlamada
+	    {
+		    Local,
+		    Provincial,
+		    Todas,
+	    }
+
 		protected float duracion;
 		protected string nroDestino;
 		protected string nroOrigen;
@@ -49,6 +50,9 @@ namespace Ejercicio_37
 
 		#region Métodos
 
+        public Llamada()
+        { }
+
 		public Llamada(float duracion, string destino, string origen)
 		{
 			this.duracion = duracion;
@@ -58,7 +62,7 @@ namespace Ejercicio_37
 
 		public string Mostrar()
 		{
-			StringBuilder datos = new StringBilder("");
+			StringBuilder datos = new StringBuilder("");
 
 			datos.Append(this.Duracion.ToString());
 			datos.Append(this.nroDestino);

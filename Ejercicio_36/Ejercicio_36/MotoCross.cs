@@ -44,7 +44,7 @@ namespace Ejercicio_36
 
         #region Métodos
 
-        public string MostrarDatos()
+        public new string MostrarDatos()
         {
             String datosAuto = "";
 

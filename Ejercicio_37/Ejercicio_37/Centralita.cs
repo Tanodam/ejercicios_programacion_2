@@ -19,12 +19,9 @@ namespace Ejercicio_37
 			{
 				float ganancia = 0;
 
-				foreach(Llamada llamada in this.Llamadas)
+				foreach(Local llamada in this.Llamadas)
 				{
-					if(llamada is Local)
-					{
-						ganancia += llamada.CalcularCosto();
-					}
+					ganancia += llamada.CostoLlamada;
 				}
 				return ganancia;
 			}
@@ -36,12 +33,9 @@ namespace Ejercicio_37
 			{
 				float ganancia = 0;
 
-				foreach(Llamada llamada in this.Llamadas)
+				foreach(Provincial llamada in this.Llamadas)
 				{
-					if(llamada is Provincial)
-					{
-						ganancia += llamada.CalcularCosto();
-					}
+					ganancia += llamada.CostoLlamada;
 				}
 				return ganancia;
 			}
@@ -55,7 +49,7 @@ namespace Ejercicio_37
 
 				foreach(Llamada llamada in this.Llamadas)
 				{
-					ganancia += llamada.CalcularCosto();
+					ganancia += llamada.CalcularCosto;
 				}
 				return ganancia;
 			}
@@ -83,19 +77,21 @@ namespace Ejercicio_37
 			this.razonSocial = nombreEmpresa;
 		}
 
-		private float CalcularGanancia(TipoLlamada tipo) //ANALIZAR DE DONDE VIENE TIPO DE LLAMADA
+		private float CalcularGanancia(Llamada.TipoLlamada tipo) //ANALIZAR DE DONDE VIENE TIPO DE LLAMADA
 		{
-			switch(TipoLlamada)
+			switch(tipo)
 			{
-				case Local:
+				case Llamada.TipoLlamada.Local:
 					return this.GananciasPorLocal;
-					break
-				case Provincial:
+                    break;
+				case Llamada.TipoLlamada.Provincial:
 					return this.GananciasPorProvincial;
-					break
-				case Todas:
+                    break;
+				case Llamada.TipoLlamada.Todas:
 					return this.GananciasPorTotal;
-					break
+                    break;
+                default:
+                    return 0;
 			}
 		}
 
