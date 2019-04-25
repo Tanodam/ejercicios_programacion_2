@@ -64,9 +64,9 @@ namespace Ejercicio_37
 		{
 			StringBuilder datos = new StringBuilder("");
 
-			datos.Append(this.Duracion.ToString());
-			datos.Append(this.nroDestino);
-			datos.Append(this.nroOrigen);
+			datos.Append("Duracion: " + this.Duracion.ToString() + "\t");
+			datos.Append("Destino: " + this.nroDestino + "\t");
+			datos.Append("Origen: " + this.nroOrigen + "\t");
 
 			return datos.ToString();
 		}

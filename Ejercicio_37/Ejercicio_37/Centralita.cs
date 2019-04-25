@@ -18,13 +18,18 @@ namespace Ejercicio_37
 			get
 			{
 				float ganancia = 0;
+                Local auxiliar;
 
-				foreach(Local llamada in this.Llamadas)
+				foreach(Llamada llamada in this.Llamadas)
 				{
-					ganancia += llamada.CostoLlamada;
-				}
+                    if(llamada is Local)
+                    {
+                        auxiliar = (Local)(llamada);
+                        ganancia += auxiliar.CostoLlamada;
+                    }
+                 }
 				return ganancia;
-			}
+            }
 		}
 
 		public float GananciasPorProvincial
@@ -32,10 +37,15 @@ namespace Ejercicio_37
 			get
 			{
 				float ganancia = 0;
+                Provincial auxiliar;
 
-                foreach (Provincial llamada in this.Llamadas)
+                foreach (Llamada llamada in this.Llamadas)
                 {
-                    ganancia += llamada.CostoLlamada;
+                   if(llamada is Provincial)
+                    {
+                        auxiliar = (Provincial)(llamada);
+                        ganancia += auxiliar.CostoLlamada;
+                    }
                 }
                 return ganancia;
 			}
@@ -95,8 +105,8 @@ namespace Ejercicio_37
 			StringBuilder datos = new StringBuilder("");
 
 			datos.Append("\nRAZÓN SOCIAL: " + this.razonSocial);
-			datos.Append("\nGANANCIAS POR LLLAMADAS LOCALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Local));
-			datos.Append("\nGANANCIAS POR LLLAMADAS PROVINCIALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Provincial));
+			datos.Append("\nGANANCIAS POR LLAMADAS LOCALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Local));
+			datos.Append("\nGANANCIAS POR LLAMADAS PROVINCIALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Provincial));
 			datos.Append("\nGANANCIA TOTAL: " + this.CalcularGanancia(Llamada.TipoLlamada.Todas));
 
 			foreach (Llamada llamada in this.Llamadas)
