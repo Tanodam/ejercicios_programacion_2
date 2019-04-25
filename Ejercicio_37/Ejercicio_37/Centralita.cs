@@ -33,11 +33,11 @@ namespace Ejercicio_37
 			{
 				float ganancia = 0;
 
-				foreach(Provincial llamada in this.Llamadas)
-				{
-					ganancia += llamada.CostoLlamada;
-				}
-				return ganancia;
+                foreach (Provincial llamada in this.Llamadas)
+                {
+                    ganancia += llamada.CostoLlamada;
+                }
+                return ganancia;
 			}
 		}
 
@@ -47,11 +47,9 @@ namespace Ejercicio_37
 			{
 				float ganancia = 0;
 
-				foreach(Llamada llamada in this.Llamadas)
-				{
-					ganancia += llamada.CalcularCosto;
-				}
-				return ganancia;
+                ganancia += this.GananciasPorLocal + this.GananciasPorProvincial;
+
+                return ganancia;
 			}
 		}
 
@@ -83,13 +81,10 @@ namespace Ejercicio_37
 			{
 				case Llamada.TipoLlamada.Local:
 					return this.GananciasPorLocal;
-                    break;
 				case Llamada.TipoLlamada.Provincial:
 					return this.GananciasPorProvincial;
-                    break;
 				case Llamada.TipoLlamada.Todas:
 					return this.GananciasPorTotal;
-                    break;
                 default:
                     return 0;
 			}
@@ -99,14 +94,10 @@ namespace Ejercicio_37
 		{
 			StringBuilder datos = new StringBuilder("");
 
-			datos.Append(this.Duracion.ToString());
-			datos.Append(this.nroDestino);
-			datos.Append(this.nroOrigen);
-
 			datos.Append("\nRAZÓN SOCIAL: " + this.razonSocial);
-			datos.Append("\nGANANCIAS POR LLLAMADAS LOCALES: " + this.CalcularGanancia(TipoLlamada.Local));
-			datos.Append("\nGANANCIAS POR LLLAMADAS PROVINCIALES: " + this.CalcularGanancia(TipoLlamada.Provincial));
-			datos.Append("\nGANANCIA TOTAL: " + this.CalcularGanancia(TipoLlamada.Todas));
+			datos.Append("\nGANANCIAS POR LLLAMADAS LOCALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Local));
+			datos.Append("\nGANANCIAS POR LLLAMADAS PROVINCIALES: " + this.CalcularGanancia(Llamada.TipoLlamada.Provincial));
+			datos.Append("\nGANANCIA TOTAL: " + this.CalcularGanancia(Llamada.TipoLlamada.Todas));
 
 			foreach (Llamada llamada in this.Llamadas)
 			{
