@@ -71,7 +71,7 @@ namespace Ejercicio_37
 			return datos.ToString();
 		}
 
-		public int OrdenarPorDuracion(Llamada llamadaUno, Llamada llamadaDos)
+		public static int OrdenarPorDuracion(Llamada llamadaUno, Llamada llamadaDos)
 		{
 			int returnValue = 0;
 

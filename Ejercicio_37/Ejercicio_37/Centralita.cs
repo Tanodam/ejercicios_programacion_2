@@ -108,7 +108,7 @@ namespace Ejercicio_37
 
 		public void OrdenarLlamadas()
 		{
-			
+            this.listaDeLlamadas.Sort(Llamada.OrdenarPorDuracion);
 		}
 		#endregion
 	}
