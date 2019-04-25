@@ -19,26 +19,17 @@ namespace Ejercicio_28
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String textValues = "";
-            KeyValuePair<string, int> auxiliar;
-
             string[] texto;
 
             texto = lblTexto.Text.Split(' ');
+            Diccionario.Clear();
 
             foreach(string palabra in texto)
             {
                 Diccionario.SetValue(palabra);
             }
 
-            for (int i=0; i < 3;i++)
-            {
-                auxiliar = Diccionario.diccionario.Max();
-                Diccionario.diccionario.Remove(auxiliar.Key);
-                textValues += "\n"+auxiliar.ToString();
-            }
-            MessageBox.Show(textValues);
+            MessageBox.Show(Diccionario.GetValues(3));
         }
-
     }
 }

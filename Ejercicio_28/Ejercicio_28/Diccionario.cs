@@ -33,5 +33,46 @@ namespace Ejercicio_28
                diccionario.Add(palabra,1);
             }
         }
+
+        public static string GetValues(int cantidad)
+        {
+            List<KeyValuePair<string,int>> listaValores= diccionario.ToList();
+            String values = "";
+
+            listaValores.Sort(Compare);
+            listaValores.Reverse();
+
+            for (int i = 0;i < cantidad;i++)
+            {
+                values += "\n"+ listaValores[i].ToString();
+            }
+            return values;
+        }
+
+        public static void Clear()
+        {
+            diccionario.Clear();
+        }
+
+        static int Compare(KeyValuePair<string, int> primerElemento, KeyValuePair<string, int> segundoElemento)
+        {
+            int returnValue = 0;
+
+            if(primerElemento.Value > segundoElemento.Value)
+            {
+                returnValue = 1;
+            }
+            else if(primerElemento.Value < segundoElemento.Value)
+            {
+                returnValue = -1;
+            }
+            else
+            {
+                returnValue = 0;
+            }
+            return returnValue;
+        }
+
+       
     }
 }
