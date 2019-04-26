@@ -23,7 +23,7 @@ namespace Entidades
             }
             set
             {
-                if(value > 21 && value < 90)
+                if(value > 0 && value < 90)
                 {
                     this.añosExperiencia = value;
                 }
