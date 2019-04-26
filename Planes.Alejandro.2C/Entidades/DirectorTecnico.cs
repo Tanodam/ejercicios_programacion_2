@@ -12,6 +12,9 @@ namespace Entidades
 
         #region Propiedades
 
+        /// <summary>
+        /// Propiedad de solo lectura que retorna campo añosExperiencia
+        /// </summary>
         public int AñosExperiencia
         {
             get
@@ -34,12 +37,24 @@ namespace Entidades
 
         #region Métodos
 
+        /// <summary>
+        /// Constructor de Director Técnico
+        /// </summary>
+        /// <param name="nombre">valor de atributo nombre</param>
+        /// <param name="apellido">valor de atributo apellido</param>
+        /// <param name="edad">valor de atributo edad</param>
+        /// <param name="dni">valor de atributo dni</param>
+        /// <param name="añosExperiencia">valor de atributo años de experiencia</param>
         public DirectorTecnico(string nombre, string apellido, int edad, int dni, int añosExperiencia)
         : base(nombre, apellido, edad, dni)
         {
             this.añosExperiencia = añosExperiencia;
         }
 
+        /// <summary>
+        /// Método sobrecargado para mostrar todos los datos de un jugador
+        /// </summary>
+        /// <returns>Retorna todos los datos en un solo string</returns>
         public override string Mostrar()
         {
             StringBuilder datos = new StringBuilder("");
@@ -53,6 +68,10 @@ namespace Entidades
             return datos.ToString();
         }
 
+        /// <summary>
+        /// Se valida a un director técnico según edad y experiencia
+        /// </summary>
+        /// <returns>Retorna true si cumple la condición sino retorna false</returns>
         public override bool ValidarAptitud()
         {
             if(base.Edad > 65 && this.AñosExperiencia > 2)
@@ -65,6 +84,5 @@ namespace Entidades
             }
         }
         #endregion
-
     }
 }

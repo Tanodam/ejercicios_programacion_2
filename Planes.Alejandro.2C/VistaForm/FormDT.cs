@@ -27,20 +27,16 @@ namespace VistaForm
             numericUpDownExperiencia.Value = 0;
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void buttonCrear_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
+            //Se instancia el atributo Director Técnico con los datos recibidos del formulario
             dt = new DirectorTecnico(textBoxNombre.Text, textBoxApellido.Text,
                 (int)numericUpDownEdad.Value, (int)numericUpDownDni.Value, (int)numericUpDownExperiencia.Value);
 
             MessageBox.Show("Un director técnico se ha creado!");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonValidar_Click(object sender, EventArgs e)
         {
             if(dt == null)
             {

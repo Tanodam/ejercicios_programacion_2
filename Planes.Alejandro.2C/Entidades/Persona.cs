@@ -15,6 +15,9 @@ namespace Entidades
 
         #region Propiedades
 
+        /// <summary>
+        /// Propiedad de solo lectura que retorna campo apellido
+        /// </summary>
         public string Apellido
         {
             get
@@ -23,6 +26,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de solo lectura que retorna campo dni
+        /// </summary>
         public int Dni
         {
             get
@@ -31,6 +37,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de solo lectura que retorna campo edad
+        /// </summary>
         public int Edad
         {
             get
@@ -39,6 +48,9 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Propiedad de solo lectura que retorna campo nombre
+        /// </summary>
         public string Nombre
         {
             get
@@ -51,8 +63,19 @@ namespace Entidades
 
         #region Métodos
 
+        /// <summary>
+        /// Método abstracto que retorna los datos de los atributos de Persona
+        /// </summary>
+        /// <returns>Retorna todos los datos en un solo string</returns>
         public abstract string Mostrar();
 
+        /// <summary>
+        /// Constructor de Persona
+        /// </summary>
+        /// <param name="nombre">valor de atributo nombre</param>
+        /// <param name="apellido">valor de atributo apellido</param>
+        /// <param name="edad">valor de atributo edad</param>
+        /// <param name="dni">valor de atributo dni</param>
         public Persona(string nombre ,string apellido, int edad, int dni)
         {
             this.nombre = nombre;
@@ -61,10 +84,12 @@ namespace Entidades
             this.dni = dni;
         }
 
+        /// <summary>
+        /// Se valida un objeto segun los valores de sus atributos
+        /// </summary>
+        /// <returns>Retorna un true al cumplir condición sino un false</returns>
         public abstract bool ValidarAptitud();
-        
-
+ 
         #endregion
-
     }
 }
