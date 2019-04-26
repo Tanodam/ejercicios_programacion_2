@@ -17,22 +17,34 @@ namespace Entidades
 
         public string Apellido
         {
-            get;
+            get
+            {
+                return this.apellido;
+            }
         }
 
         public int Dni
         {
-            get;
+            get
+            {
+                return this.dni;
+            }
         }
 
         public int Edad
         {
-            get;
+            get
+            {
+                return this.edad;
+            }
         }
 
         public string Nombre
         {
-            get;
+            get
+            {
+                return this.nombre;
+            }
         }
 
         #endregion

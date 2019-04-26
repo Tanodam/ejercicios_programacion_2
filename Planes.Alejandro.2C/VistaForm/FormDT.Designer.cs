@@ -165,6 +165,7 @@
             this.Controls.Add(this.textBoxApellido);
             this.Controls.Add(this.textBoxNombre);
             this.Name = "FormDT";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDT";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownEdad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDni)).EndInit();

@@ -19,7 +19,7 @@ namespace Entidades
         {
             set
             {
-                if(value.ValidarAptitud())
+                if(value != null && value.ValidarAptitud())
                 {
                     this.DirectorTecnico = value;
                 }
@@ -75,7 +75,6 @@ namespace Entidades
                 }
             }
 
-            //Ver lo del DT
             if(arquero == 1 && defensor > 1 && central > 1 && delantero > 1 && 
                 equipo.jugadores.Count == Equipo.cantidadMaximaJugadores && equipo.directorTecnico != null)
             {
@@ -108,9 +107,11 @@ namespace Entidades
             //Corregir lo del DT
             foreach(Jugador jugador in equipo.jugadores)
             {
-                datos.AppendLine(jugador.Mostrar());
+                if(jugador != null)
+                {
+                    datos.AppendLine(jugador.Mostrar());
+                }
             }
-
             return datos.ToString();
         }
 
@@ -121,14 +122,7 @@ namespace Entidades
 
         public static bool operator ==(Equipo equipo, Jugador jugador)
         {
-            if(equipo.jugadores.Contains(jugador))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return equipo.jugadores.Contains(jugador);
         }
 
         public static Equipo operator +(Equipo equipo, Jugador jugador)

@@ -54,10 +54,10 @@ namespace Entidades
         {
             StringBuilder datos = new StringBuilder("");
 
-            datos.AppendLine(base.Nombre.ToString());
-            datos.AppendLine(base.Apellido.ToString());
-            datos.AppendLine(base.Edad.ToString());
-            datos.AppendLine(base.Dni.ToString());
+            datos.AppendLine(this.Nombre.ToString());
+            datos.AppendLine(this.Apellido.ToString());
+            datos.AppendLine(this.Edad.ToString());
+            datos.AppendLine(this.Dni.ToString());
             datos.AppendLine(this.Peso.ToString());
             datos.AppendLine(this.Altura.ToString());
             datos.AppendLine(this.Posicion.ToString());
