@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ejercicio_37
+namespace Entidades
 {
   public class Local : Llamada
   {

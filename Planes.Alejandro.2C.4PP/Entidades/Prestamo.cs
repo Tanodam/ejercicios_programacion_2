@@ -30,7 +30,7 @@ namespace PrestamosPersonales
             }
             set
             {
-                if(value < DateTime.Now)
+                if(value > DateTime.Now)
                 {
                     this.vencimiento = value;
                 }
