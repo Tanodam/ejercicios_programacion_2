@@ -1,4 +1,4 @@
-﻿namespace VistsForm
+namespace VistaForm
 {
   partial class FrmMostrar
   {
@@ -28,26 +28,27 @@
     /// </summary>
     private void InitializeComponent()
     {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 13);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(320, 369);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
-            // 
-            // FrmMostrar
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 396);
-            this.Controls.Add(this.richTextBox1);
-            this.Name = "FrmMostrar";
-            this.Text = "FrmMostrar";
-            this.ResumeLayout(false);
+      this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+      this.SuspendLayout();
+      // 
+      // richTextBox1
+      // 
+      this.richTextBox1.Location = new System.Drawing.Point(13, 13);
+      this.richTextBox1.Name = "richTextBox1";
+      this.richTextBox1.Size = new System.Drawing.Size(320, 369);
+      this.richTextBox1.TabIndex = 0;
+      this.richTextBox1.Text = "";
+      // 
+      // FrmMostrar
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(348, 396);
+      this.Controls.Add(this.richTextBox1);
+      this.Name = "FrmMostrar";
+      this.Text = "FrmMostrar";
+      this.Load += new System.EventHandler(this.FrmMostrar_Load);
+      this.ResumeLayout(false);
 
     }
 
