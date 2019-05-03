@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio_40", "Ejercicio_40\Ejercicio_40.csproj", "{EA409EBC-440C-452F-87D0-FB2C75B3E09F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistaForm", "VistsForm\VistaForm.csproj", "{9354E4C3-CB50-409D-A31D-22B1EBD4C798}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VistaForm", "VistaForm\VistaForm.csproj", "{9354E4C3-CB50-409D-A31D-22B1EBD4C798}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
