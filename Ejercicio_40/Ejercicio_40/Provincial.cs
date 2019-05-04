@@ -65,7 +65,7 @@ namespace Entidades
       StringBuilder datos = new StringBuilder("");
 
       datos.AppendLine(base.Mostrar());
-      datos.AppendFormat("Costo de llamada: {0}", this.CostoLlamada.ToString());
+      datos.AppendFormat("Costo de llamada: ${0}", this.CostoLlamada.ToString());
       datos.AppendFormat("Franja horaria: {0}", this.franjaHoraria.ToString());
 
       return datos.ToString();

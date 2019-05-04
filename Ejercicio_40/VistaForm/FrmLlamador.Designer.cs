@@ -52,13 +52,12 @@ namespace VistaForm
             // 
             // txtDestino
             // 
-            this.txtDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDestino.Location = new System.Drawing.Point(13, 13);
+            this.txtDestino.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDestino.Location = new System.Drawing.Point(16, 12);
             this.txtDestino.Name = "txtDestino";
-            this.txtDestino.Size = new System.Drawing.Size(350, 35);
+            this.txtDestino.Size = new System.Drawing.Size(350, 32);
             this.txtDestino.TabIndex = 0;
             this.txtDestino.Text = "Nro Destino";
-            this.txtDestino.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtDestino_KeyDown);
             // 
             // gpbPanel
             // 
@@ -207,7 +206,7 @@ namespace VistaForm
             this.txtOrigen.Location = new System.Drawing.Point(184, 202);
             this.txtOrigen.Name = "txtOrigen";
             this.txtOrigen.Size = new System.Drawing.Size(182, 26);
-            this.txtOrigen.TabIndex = 2;
+            this.txtOrigen.TabIndex = 4;
             this.txtOrigen.Text = "Nro Origen";
             // 
             // botonLlamar
@@ -215,18 +214,20 @@ namespace VistaForm
             this.botonLlamar.Location = new System.Drawing.Point(184, 76);
             this.botonLlamar.Name = "botonLlamar";
             this.botonLlamar.Size = new System.Drawing.Size(182, 50);
-            this.botonLlamar.TabIndex = 3;
+            this.botonLlamar.TabIndex = 2;
             this.botonLlamar.Text = "Llamar";
             this.botonLlamar.UseVisualStyleBackColor = true;
+            this.botonLlamar.Click += new System.EventHandler(this.botonLlamar_Click);
             // 
             // botonLimpiar
             // 
             this.botonLimpiar.Location = new System.Drawing.Point(184, 132);
             this.botonLimpiar.Name = "botonLimpiar";
             this.botonLimpiar.Size = new System.Drawing.Size(182, 50);
-            this.botonLimpiar.TabIndex = 4;
+            this.botonLimpiar.TabIndex = 3;
             this.botonLimpiar.Text = "Limpiar";
             this.botonLimpiar.UseVisualStyleBackColor = true;
+            this.botonLimpiar.Click += new System.EventHandler(this.botonLimpiar_Click);
             // 
             // botonSalir
             // 
@@ -236,6 +237,7 @@ namespace VistaForm
             this.botonSalir.TabIndex = 5;
             this.botonSalir.Text = "Salir";
             this.botonSalir.UseVisualStyleBackColor = true;
+            this.botonSalir.Click += new System.EventHandler(this.botonSalir_Click);
             // 
             // cmbFranjaHoraria
             // 
@@ -264,7 +266,10 @@ namespace VistaForm
             this.Controls.Add(this.txtOrigen);
             this.Controls.Add(this.gpbPanel);
             this.Controls.Add(this.txtDestino);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmLlamador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLlamador";
             this.Load += new System.EventHandler(this.FrmLlamador_Load);
             this.Click += new System.EventHandler(this.FrmLlamador_Click);

@@ -28,32 +28,34 @@ namespace VistaForm
     /// </summary>
     private void InitializeComponent()
     {
-      this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-      this.SuspendLayout();
-      // 
-      // richTextBox1
-      // 
-      this.richTextBox1.Location = new System.Drawing.Point(13, 13);
-      this.richTextBox1.Name = "richTextBox1";
-      this.richTextBox1.Size = new System.Drawing.Size(320, 369);
-      this.richTextBox1.TabIndex = 0;
-      this.richTextBox1.Text = "";
-      // 
-      // FrmMostrar
-      // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(348, 396);
-      this.Controls.Add(this.richTextBox1);
-      this.Name = "FrmMostrar";
-      this.Text = "FrmMostrar";
-      this.Load += new System.EventHandler(this.FrmMostrar_Load);
-      this.ResumeLayout(false);
+            this.rtbFacturacion = new System.Windows.Forms.RichTextBox();
+            this.SuspendLayout();
+            // 
+            // rtbFacturacion
+            // 
+            this.rtbFacturacion.Location = new System.Drawing.Point(13, 13);
+            this.rtbFacturacion.Name = "rtbFacturacion";
+            this.rtbFacturacion.Size = new System.Drawing.Size(336, 334);
+            this.rtbFacturacion.TabIndex = 0;
+            this.rtbFacturacion.Text = "";
+            // 
+            // FrmMostrar
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(361, 359);
+            this.Controls.Add(this.rtbFacturacion);
+            this.MaximizeBox = false;
+            this.Name = "FrmMostrar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "FrmMostrar";
+            this.Load += new System.EventHandler(this.FrmMostrar_Load);
+            this.ResumeLayout(false);
 
     }
 
     #endregion
 
-    private System.Windows.Forms.RichTextBox richTextBox1;
+    private System.Windows.Forms.RichTextBox rtbFacturacion;
   }
 }

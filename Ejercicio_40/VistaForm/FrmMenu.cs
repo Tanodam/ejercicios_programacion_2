@@ -11,18 +11,15 @@ using Entidades;
 
 namespace VistaForm
 {
-  public partial class FrmCentral : Form
+  public partial class FrmMenu : Form
   {
     Centralita centralita = new Centralita("Pepito's Call Center");
+    FrmLlamador formLlamador;
+    FrmMostrar formMostrar;
 
-    public FrmCentral()
+    public FrmMenu()
     {
       InitializeComponent();
-    }
-
-    private void button4_Click(object sender, EventArgs e)
-    {
-
     }
 
     private void FrmCentral_Load(object sender, EventArgs e)
@@ -32,9 +29,35 @@ namespace VistaForm
 
     private void btnGenerarLlamada_Click(object sender, EventArgs e)
     {
-      FrmLlamador formLlamador = new FrmLlamador(centralita);
-      formLlamador.Show();
-
+        formLlamador = new FrmLlamador(centralita);
+        formLlamador.ShowDialog();
+        centralita = formLlamador.Centralita;
     }
-  }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnFactTotal_Click(object sender, EventArgs e)
+        {
+            formMostrar = new FrmMostrar(centralita);
+            formMostrar.TipoLlamada = Llamada.TipoLlamada.Todas;
+            formMostrar.ShowDialog();
+        }
+
+        private void btnFactProvincial_Click(object sender, EventArgs e)
+        {
+            formMostrar = new FrmMostrar(centralita);
+            formMostrar.TipoLlamada = Llamada.TipoLlamada.Provincial;
+            formMostrar.ShowDialog();
+        }
+
+        private void btnFactLocal_Click(object sender, EventArgs e)
+        {
+            formMostrar = new FrmMostrar(centralita);
+            formMostrar.TipoLlamada = Llamada.TipoLlamada.Local;
+            formMostrar.ShowDialog();
+        }
+    }
 }

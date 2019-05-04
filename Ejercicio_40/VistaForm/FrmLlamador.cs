@@ -11,122 +11,190 @@ using Entidades;
 
 namespace VistaForm
 {
-  public partial class FrmLlamador : Form
-  {
-    private Centralita centralita;
-    private Llamada llamada;
-    private string numero;
-
-    public Centralita Centralita
+    public partial class FrmLlamador : Form
     {
-      get
-      {
-        return this.centralita;
-      }
-    }
+         
+        private Centralita centralita;
+        private Llamada llamada;
+        Provincial.Franja franja;
+        Random duracion = new Random();
+        Random costoLlamada = new Random();
 
-    public FrmLlamador()
-    {
-      InitializeComponent();
-    }
-
-    public FrmLlamador(Centralita central) : this()
-    {
-      this.centralita = central;
-    }
-
-    private void FrmLlamador_Load(object sender, EventArgs e)
-    {
-      this.numero = "";
-    }
-
-    private void FrmLlamador_Click(object sender, EventArgs e)
-    {
-      txtDestino.Text = "";
-      txtOrigen.Text = "";
-    }
-
-    private void botonUno_Click(object sender, EventArgs e)
-    {
-      this.numero += "1";
-      txtDestino.Text = numero;
-    }
-
-    private void botonDos_Click(object sender, EventArgs e)
-    {
-      this.numero += "2";
-      txtDestino.Text = numero;
-    }
-
-    private void botonTres_Click(object sender, EventArgs e)
-    {
-      this.numero += "3";
-      txtDestino.Text = numero;
-    }
-
-    private void botonCuatro_Click(object sender, EventArgs e)
-    {
-      this.numero += "4";
-      txtDestino.Text = numero;
-    }
-
-    private void botonCinco_Click(object sender, EventArgs e)
-    {
-      this.numero += "5";
-      txtDestino.Text = numero;
-    }
-
-    private void botonSeis_Click(object sender, EventArgs e)
-    {
-      this.numero += "6";
-      txtDestino.Text = numero;
-    }
-
-    private void botonSiete_Click(object sender, EventArgs e)
-    {
-      this.numero += "7";
-      txtDestino.Text = numero;
-    }
-
-    private void botonOcho_Click(object sender, EventArgs e)
-    {
-      this.numero += "8";
-      txtDestino.Text = numero;
-    }
-
-    private void botonNueve_Click(object sender, EventArgs e)
-    {
-      this.numero += "9";
-      txtDestino.Text = numero;
-    }
-
-    private void botonCero_Click(object sender, EventArgs e)
-    {
-      this.numero += "0";
-      txtDestino.Text = numero;
-    }
-
-    private void btnAsterisco_Click(object sender, EventArgs e)
-    {
-      this.numero += "*";
-      txtDestino.Text = numero;
-    }
-
-    private void btnNumeral_Click(object sender, EventArgs e)
-    {
-      this.numero += "#";
-      txtDestino.Text = numero;
-    }
-
-    private void txtDestino_KeyDown(object sender, KeyEventArgs e)
-    {
-      if (e.KeyCode == Keys.Enter && txtDestino.Text != "")
-      {
-        if(txtDestino.Text[0] != '#')
+        public Centralita Centralita
         {
-          cmbFranjaHoraria.H
+            get
+            {
+                return this.centralita;
+            }
         }
-      }
+
+        public FrmLlamador()
+        {
+            InitializeComponent();
+        }
+
+        public FrmLlamador(Centralita central) : this()
+        {
+            this.centralita = central;
+            this.cmbFranjaHoraria.DataSource = Enum.GetValues(typeof(Provincial.Franja));
+        }
+
+        private void FrmLlamador_Load(object sender, EventArgs e)
+        {
+            txtOrigen.Text = "01147778169";
+            txtOrigen.Enabled = false;
+            txtDestino.Enabled = false;
+        }
+
+        private void FrmLlamador_Click(object sender, EventArgs e)
+        {
+            txtDestino.Text = "";
+        }
+
+        private void botonUno_Click(object sender, EventArgs e)
+        {
+            if(txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "1";
+        }
+
+        private void botonDos_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "2";
+        }
+
+        private void botonTres_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "3";
+        }
+
+        private void botonCuatro_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "4";
+        }
+
+        private void botonCinco_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "5";
+        }
+
+        private void botonSeis_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "6";
+        }
+
+        private void botonSiete_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "7";
+        }
+
+        private void botonOcho_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "8";
+        }
+
+        private void botonNueve_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "9";
+        }
+
+        private void botonCero_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "0";
+        }
+
+        private void btnAsterisco_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+            txtDestino.Text += "*";
+        }
+
+        private void btnNumeral_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text == "Nro Destino")
+            {
+                txtDestino.Text = "";
+            }
+
+            txtDestino.Text += "#";
+
+            if (cmbFranjaHoraria.Enabled == false)
+            {
+                cmbFranjaHoraria.Enabled = true;
+            }
+        }
+
+        private void botonSalir_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void botonLimpiar_Click(object sender, EventArgs e)
+        {
+            txtDestino.Text = "";
+            cmbFranjaHoraria.Enabled = true;
+        }
+
+        private void botonLlamar_Click(object sender, EventArgs e)
+        {
+            if (txtDestino.Text != "" && txtOrigen.Text != "")
+            {
+                if(txtDestino.Text[0] == '#') // Es llamada provincial
+                {
+                    Enum.TryParse<Provincial.Franja>(cmbFranjaHoraria.SelectedValue.ToString(), out franja);
+                    llamada = new Provincial(txtOrigen.Text, franja, (float)(duracion.Next(1, 50)), txtDestino.Text);
+                    this.centralita += llamada;
+                    MessageBox.Show(llamada.ToString());
+                }
+                else
+                {
+                    cmbFranjaHoraria.Enabled = false;
+                    llamada = new Local(txtOrigen.Text, (float)(duracion.Next(1,50)), txtDestino.Text, (float)(costoLlamada.Next(5, 56)/10));
+                    this.centralita += llamada;
+                    MessageBox.Show(llamada.ToString());
+                }
+            }         
+        }
     }
-  }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VistsForm
+namespace VistaForm
 {
   static class Program
   {
@@ -16,7 +16,7 @@ namespace VistsForm
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new FrmCentral());
+      Application.Run(new FrmMenu());
     }
   }
 }

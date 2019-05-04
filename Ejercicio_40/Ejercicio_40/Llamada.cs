@@ -67,9 +67,9 @@ namespace Entidades
     {
       StringBuilder datos = new StringBuilder("");
 
-      datos.AppendFormat("Duracion: {0} -", this.Duracion.ToString());
-      datos.AppendFormat("Destino: {0} -", this.NroDestino);
-      datos.AppendFormat("Origen: {0}", this.nroOrigen);
+      datos.AppendFormat("Duracion: {0} min \n", this.Duracion.ToString());
+      datos.AppendFormat("Número de destino: {0} \n", this.NroDestino);
+      datos.AppendFormat("Número de origen: {0} \n", this.nroOrigen);
 
       return datos.ToString();
     }
