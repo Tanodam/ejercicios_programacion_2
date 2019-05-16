@@ -39,22 +39,28 @@ namespace Ejercicio_36
             this.nombreMetodo = metodo;
         }
 
-        /*
-         * La sobreescritura del método ToString retonará un mensaje con el siguiente formato por
-        líneas:
-        i. "Excepción en el método {0} de la clase {1}:"
-        ii. Mensaje propio de la excepción
-        iii. Todos los InnerException con una tabulación ('\t').
-         */
 
         public override string ToString()
         {
             StringBuilder detalleExcepcion = new StringBuilder();
 
             detalleExcepcion.AppendFormat("Excepción en el método {0} de la clase {1}:", this.NombreMetodo, this.NombreClase);
+            detalleExcepcion.AppendFormat(this.Message);
 
 
-            return base.ToString();
+            if (!object.ReferenceEquals(this.InnerException, null))
+            {
+                Exception auxiliar = this.InnerException;
+
+                do
+                {
+                    detalleExcepcion.AppendFormat(auxiliar.Message);
+                    auxiliar = auxiliar.InnerException;
+
+                } while (!object.ReferenceEquals(auxiliar, null));
+            }
+
+            return detalleExcepcion.ToString();
         }
 
     }

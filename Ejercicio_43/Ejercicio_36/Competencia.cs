@@ -123,19 +123,22 @@ namespace Ejercicio_36
         public static bool operator +(Competencia competencia, VehiculoCarrera vehiculo)
         {   
             Random numeroRandom = new Random();
-
-            if(competencia != vehiculo && competencia.competidores.Count < competencia.CantidadCompetidores)
+            try
             {
-                vehiculo.EnCompetencia = true;
-                vehiculo.VueltasRestantes = competencia.CantidadVueltas;
-                vehiculo.CantidadCombustible = (short)numeroRandom.Next(15,100);;
-                competencia.competidores.Add(vehiculo);
-                return true;
+                if(competencia != vehiculo && competencia.competidores.Count < competencia.CantidadCompetidores)
+                {
+                    vehiculo.EnCompetencia = true;
+                    vehiculo.VueltasRestantes = competencia.CantidadVueltas;
+                    vehiculo.CantidadCombustible = (short)numeroRandom.Next(15,100);;
+                    competencia.competidores.Add(vehiculo);
+                    return true;
+                }
             }
-            else
+            catch(CompetenciaNoDisponibleException exception)
             {
-                return false;
+                throw new CompetenciaNoDisponibleException("Competencia incorrecta", typeof(Competencia).ToString(), "Operador +", exception);
             }
+            return false;
         }
 
         public static bool operator ==(Competencia competencia, VehiculoCarrera vehiculo)
@@ -154,6 +157,10 @@ namespace Ejercicio_36
                         break;
                     }
                 }
+            }
+            else
+            {
+                throw new CompetenciaNoDisponibleException("El vehiculo no corresponde a la competencia", typeof(Competencia).ToString(), "Operador ==");
             }
             return returnValue;
         }
