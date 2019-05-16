@@ -32,10 +32,14 @@ namespace VistaConsola
 
                 if (!object.ReferenceEquals(excepcion.InnerException, null))
                 {
+                    Exception auxiliar = excepcion.InnerException;
+
                     do
                     {
-                        Console.Write(excepcion.InnerException.Message);
-                    } while (!object.ReferenceEquals(excepcion.InnerException, null));
+                        Console.Write(auxiliar.Message);
+                        auxiliar = auxiliar.InnerException;
+
+                    } while (!object.ReferenceEquals(auxiliar, null));
                 }
 
                 Console.ReadKey();
