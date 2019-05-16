@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{958BEFA0-911F-4517-88EB-41785FEAD204}</ProjectGuid>
+    <ProjectGuid>{35871F36-F168-4DBA-B110-00BFD376EA29}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>VistaConsola</RootNamespace>
     <AssemblyName>VistaConsola</AssemblyName>
@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaseTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnaException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

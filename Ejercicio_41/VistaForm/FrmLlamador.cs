@@ -180,20 +180,28 @@ namespace VistaForm
         {
             if (txtDestino.Text != "" && txtOrigen.Text != "")
             {
-                if(txtDestino.Text[0] == '#') // Es llamada provincial
+                try
                 {
-                    Enum.TryParse<Provincial.Franja>(cmbFranjaHoraria.SelectedValue.ToString(), out franja);
-                    llamada = new Provincial(txtOrigen.Text, franja, (float)(duracion.Next(1, 50)), txtDestino.Text);
-                    this.centralita += llamada;
-                    MessageBox.Show(llamada.ToString());
+                    if(txtDestino.Text[0] == '#') // Es llamada provincial
+                    {
+                        Enum.TryParse<Provincial.Franja>(cmbFranjaHoraria.SelectedValue.ToString(), out franja);
+                        llamada = new Provincial(txtOrigen.Text, franja, (float)(duracion.Next(1, 50)), txtDestino.Text);
+                        this.centralita += llamada;
+                        MessageBox.Show(llamada.ToString());
+                    }
+                    else
+                    {
+                        cmbFranjaHoraria.Enabled = false;
+                        llamada = new Local(txtOrigen.Text, (float)(duracion.Next(1,50)), txtDestino.Text, (float)(costoLlamada.Next(5, 56)/10));
+                        this.centralita += llamada;
+                        MessageBox.Show(llamada.ToString());
+                    }
                 }
-                else
+                catch(CentralitaException exception)
                 {
-                    cmbFranjaHoraria.Enabled = false;
-                    llamada = new Local(txtOrigen.Text, (float)(duracion.Next(1,50)), txtDestino.Text, (float)(costoLlamada.Next(5, 56)/10));
-                    this.centralita += llamada;
-                    MessageBox.Show(llamada.ToString());
+                    MessageBox.Show(exception.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 }
+
             }         
         }
     }
