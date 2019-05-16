@@ -8,15 +8,13 @@ namespace VistaConsola
 {
     class UnaException : Exception
     {
-        public UnaException(Exception innerException):
+        public UnaException(string mensaje):base(mensaje)
         {
 
         }
 
-        public UnaException(string mensaje,Exception innerException)
+        public UnaException(string mensaje,Exception innerException) : base(mensaje,innerException)
         {
-
-
         }
     }
 }

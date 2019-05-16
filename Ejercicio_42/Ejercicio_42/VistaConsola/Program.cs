@@ -19,17 +19,26 @@ namespace VistaConsola
     {
         static void Main(string[] args)
         {
-            int primerNumero = 20;
-            int segundoNumero = 0;
-            int resultado;
+            ClaseMetodo test;
 
             try
             {
-                resultado = primerNumero / segundoNumero;                
+                test = new ClaseMetodo();
+                test.MetodoInstancia(1);
             }
-            catch(DivideByZeroException exception)
+            catch(MiExcepcion excepcion)
             {
-                throw new UnaException(exception);
+                Console.Write(excepcion.Message);
+
+                if (!object.ReferenceEquals(excepcion.InnerException, null))
+                {
+                    do
+                    {
+                        Console.Write(excepcion.InnerException.Message);
+                    } while (!object.ReferenceEquals(excepcion.InnerException, null));
+                }
+
+                Console.ReadKey();
             }
         }
     }
